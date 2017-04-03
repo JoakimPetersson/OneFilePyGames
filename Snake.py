@@ -4,9 +4,6 @@ from enum import Enum
 import random
 import copy
 
-# TODO
-# Set speed value
-
 # Colors
 BLACK = ( 0, 0, 0)
 WHITE = ( 255, 255, 255)
@@ -18,9 +15,9 @@ BLUE = ( 0, 0, 255)
 SCREEN_WIDTH = 800;
 SCREEN_HEIGHT = 800;
 GAME_AREA = 600
-GRID_SIZE = 60
+GRID_SIZE = 30
 SQUARE_SIDE = GAME_AREA // GRID_SIZE
-SPEED = 75
+SPEED = 40
 BORDER = 100
 
 # System
@@ -35,7 +32,6 @@ font = pygame.font.SysFont("Arial", 20)
 bigfont = pygame.font.SysFont("Arial", 72)
 TICK = 60
 run = True
-
 
 # Events
 MOVE_EVENT = USEREVENT + 1
@@ -201,14 +197,9 @@ class Snake():
                     self.body[idx].pos.x = self.body[idx -1].pos.x
                     self.body[idx].pos.y = self.body[idx -1].pos.y
 
-
-
-
     def draw_snake(self, screen):
         self.sprites.update()
         self.sprites.draw(screen)
-
-
 
 # Objects
 snake = Snake()
